@@ -1,0 +1,13 @@
+name: HelperXD
+version: ${project.version}
+main: me.quartzwarrior.Listener
+api-version: 1.16
+authors: [ QuartzWarrior ]
+description: HelperXD is a plugin that makes the server nice and safe.
+commands:
+  die:
+      description: Die fool.
+  heal1:
+    description: Heals half heart
+  heal2:
+    description: Heals full heart
