@@ -11,7 +11,11 @@ public class Feed implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
             Player player = (Player) sender;
-            player.setFoodLevel(20);
+            if (player.getHealth() == 20){
+                player.giveExp(1);
+            }else{
+                player.setFoodLevel(20);
+            }
         }else{
             Bukkit.getLogger().info("You need to be a player to execute this command.");
         }
