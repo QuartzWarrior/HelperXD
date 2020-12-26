@@ -1,5 +1,7 @@
 package me.quartzwarrior;
 
+import me.quartzwarrior.Commands.Feed;
+import me.quartzwarrior.Commands.GodMode;
 import me.quartzwarrior.Events.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,6 +17,8 @@ public final class Listener extends JavaPlugin implements org.bukkit.event.Liste
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new PlayerLeave(), this);
         getServer().getPluginManager().registerEvents(new OnDeath(), this);
+        getCommand("godmode").setExecutor(new GodMode());
+        getCommand("feed").setExecutor(new Feed());
     }
     @Override
     public void onDisable() {
