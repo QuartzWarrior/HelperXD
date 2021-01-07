@@ -1,5 +1,6 @@
 package me.quartzwarrior.Events;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,5 +15,6 @@ public class OnDeath implements Listener {
         String Msg = event.getDeathMessage();
         event.setDeathMessage(Msg + " while using a " + ChatColor.ITALIC + player.getClientBrandName() + ChatColor.RESET + " client");
         player.sendMessage("Here are your death coords: " + player.getLocation().getBlockX() + ", " + player.getLocation().getBlockY() + ", " + player.getLocation().getBlockZ());
+        Bukkit.getLogger().info(player.getDisplayName() + " died at " + player.getLocation().getBlockX() + ", " + player.getLocation().getBlockY() + ", " + player.getLocation().getBlockZ());
     }
 }
